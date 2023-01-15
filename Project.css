@@ -1,0 +1,100 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* As we want all content to be in wrapper so its height must be equal to vh */
+#wrapper{
+    height: 100vh;
+    overflow-x: hidden;  /*Save us from right(Width) scrolling*/
+    overflow-y: auto;    /*As we want to scrool in Y-axis*/
+    perspective: 10px;    /*(3d ko on krne ke leye) -Jitna jyada image utni bddi ho jaegi*/
+}
+.container
+{
+    position: relative;  /*Check if required*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    /* To preserve 3d style */
+    transform-style: preserve-3d;
+    z-index: -1;          /*Check if required*/
+}  
+.background{
+    transform: translateZ(-40px) scale(5);
+}
+.foreground{
+    transform: translateZ(-20px) scale(3);
+}
+h1{
+    color: white;
+    position: absolute;
+    top: 5rem;           /*They will  provide these values to us*/
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: 4px;
+    font-size: 10rem;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.background, .foreground{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;  /*To make object better fit on screen*/
+    z-index: -1;  /*Layering ka order->Text upar lane ke leye*/
+}
+
+section{
+    background-color: rgb(45, 45, 45);
+    color: white;
+    padding: 5rem 0;
+}
+
+.secheading{
+    font-size: 5rem;
+    padding: 0 10rem;
+}
+
+.text{
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+}
+
+.bg{
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;  /*To make image fixed*/
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
+.bg1{
+    background-image: url(sport-1.jpg);
+    
+}
+
+.bg2{
+    background-image: url(sport-2.jpg);
+}
+
+.bg3{
+    background-image: url(sport-3.jpg);
+}
+.desc{
+    position: absolute;
+    background-color: white;
+
+    padding: 0.5rem 2.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) ;
+    color: black;
+    font-size: 3.5rem;
+    font-weight: 600;
+
+}
+
